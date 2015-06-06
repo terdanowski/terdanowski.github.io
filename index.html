@@ -1,76 +1,38 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-<font color="white">
-  <body background="http://trickvilla.com/wp-content/uploads/Light-Wood-Background.jpg"></body>
-  
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
-    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-    <script src="Control.BingGeocoder.js"></script>
-    <link rel="stylesheet" href="Control.BingGeocoder.css" />
-    <title>Techniki Internetowe</title>
-  </head>
-
-  <body>
-
-    <header>
-      <div class="container">
-        <h1>Techniki Internetowe 2015</h1>
-        <h2></h2>
-
-        <section id="downloads">
-          <a href="https://github.com/terdanowski/terdanowski.github.io" class="btn btn-github"><span class="icon"></span>Sprawdz na GitHub</a>
-        </section>
-      </div>
-    </header>
-
-    <div class="container">
-      <section id="main_content">
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>O Mnie</h3>
-
-<p>Tomasz Erdanowski</p>
-<p>Student PSPI</p>
-
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Mapa</h3>
-<div id="map" style="max-width: 100%; height:300px;margin-top:30px;margin-bottom:10px;"></div>
-                  <script>
-                     var map = L.map('map').setView([54.396355, 18.573598], 15);
-                      L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-                      attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}, {maxZoom: 18,}).addTo(map);
-                      var bingGeocoder = new L.Control.BingGeocoder('AsaKzgbo2GW8wrcv0mLCyVvEx2Q8V1N54Gpmizw-fzHIKOAjAMMy4TdNfKdS71vs');
-                      map.addControl(bingGeocoder);
-                      var marker = L.marker([54.396355, 18.573598]).addTo(map);
-                      marker.bindPopup("<b>Uniwersytet Gdanski</b><br>Bazynskiego 1A, Gdansk</br>").openPopup();
-                      
-                        for (var i = 1; i < localStorage.length; i=i+2) {
-	console.log(localStorage.getItem(i)+" "+localStorage.getItem(i+1));
-	L.marker([localStorage.getItem(i),localStorage.getItem(i+1)]).bindPopup("Punkt: " + (i+1)/2).addTo(map);
-}
-function onMapClick(e) {
-	localStorage.setItem(localStorage.length+1, e.latlng.lat);
-	localStorage.setItem(localStorage.length+1, e.latlng.lng);
-	console.log(localStorage.getItem(localStorage.length-1));
-	console.log(localStorage.getItem(localStorage.length));
-	location.reload();
-}
-map.on('click', onMapClick);
-                  </script>
-
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Prezentacja kulinarna:</h3>
-
-<a href="http://slides.com/terdanowski/deck#/">Link do slajdow</a>
-<p></p>
-      </section>
+<html lang="pl">
+<head>
+  <title>Pierwsza strona Bootstrap</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+  <div class="jumbotron"style="background:#FFCC99">
+    <h2><center>Audi 80 B2</h2>
+    <p><center>1978 - 1986</p>
     </div>
-</font>
-    
-  </body>
+    <div class="col-sm-3">
+      <h3><center>Sedan</h3><br/><br/>
+	<img class="img"  width="304" height="236" src="http://img.favcars.com/audi/80/audi_80_1978_photos_1.jpg" alt="Chania">
+      <p><br/>Rok 1978 przyniósł nowy model 80 oparty o platformę B2 (oznaczenie Typ 81). Rok później dotarł on również do Ameryki Północnej. Firma Audi kontynuowała sprzedaż swoich samochodów w Europie jako 80, natomiast w Ameryce Północnej zaczęto stosować oznaczenie Audi 4000.</p>
+    </div>
+    <div class="col-sm-3">
+      <h3><center>Dwudrzwiowy sedan</h3><br/><br/>
+	<img class="img" width="304" height="236" src="http://upload.wikimedia.org/wikipedia/commons/c/cf/Audi_80_b2_v_sst.jpg" alt="Chania">
+      <p><br/> Nadwozie modelu B2 zostało zaprojektowane przez Giorgetto Giugiaro. Pomimo iż w przeważającej części samochód ten zamawiano w wersji czterodrzwiowej, wyprodukowano także niewielką liczbę egzemplarzy wersji dwudrzwiowej.</p>
+    </div>
+	<div class="col-sm-3">
+    <h3><center>Coupe</h3><br/><br/>
+    <img class="img" width="304" height="236" src="http://m.autokult.pl/audi-coupe-616x435-97137520e927e,630,0,0,0.jpg" alt="Chania">
+    <p><br/> Model Coupé był bliźniaczo podobny do znacznie droższego quattro, jednak początkowo brakowało mu napędu na cztery koła oraz naprawdę mocnych turbodoładowanych silników. Pozostał jednak nietuzinkowy wygląd (tylko szczegółami różniący się od quattro) i genialna namiastka rajdowej legendy, dostępna dla szerszej grupy odbiorców.</p>
+  </div>
+    <div class="col-sm-3">
+      Prezentacja o moim Audi:
+      <a href="http://slides.com/terdanowski/deck#/">Link do slajdow</a>
+    </div>
+
+</body>
 </html>
